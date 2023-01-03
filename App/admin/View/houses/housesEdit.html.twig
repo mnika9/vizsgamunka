@@ -1,0 +1,43 @@
+{% include 'header.html.twig' %}
+{% include 'menu.html.twig' %}
+
+{# <pre>
+ {{ dump(owners)}} 
+</pre> #}
+
+<div class="container">
+    <form action="/housesEdit" method="post" class="row g-2">
+        <input type="hidden" value="{{houses.id}}" name="id">
+        <div class="form-group">
+            <label for="name" class="form-label">Vendégház neve</label>
+            <input type="text" class="form-control" name="name" id="name" value="{{houses.name}}"></div>
+            <div class="form-group mt-2">
+                <label for="postcode" class="form-label">Irányítószám</label>
+                <input type="number" class="form-control" name="postcode" id="postcode" value="{{houses.postcode}}"></div>
+            <div class="form-group mt-2">
+                <label for="city" class="form-label">Város</label>
+                <input type="text" class="form-control" name="city" id="city"value="{{houses.city}}"></div>
+            <div class="form-group mt-2">
+                <label for="street" class="form-label">Utca neve</label>
+                <input type="text" class="form-control" name="street" id="street" value="{{houses.street}}"></div>
+            <div class="form-group mt-2">
+                <label for="street_type" class="form-label">Közterület típusa</label>
+                <input type="text" class="form-control" name="street_type" id="street_type" value="{{houses.street_type}}"></div>
+            <div class="form-group mt-2">
+		    	<label for="house_number" class="form-label">Házszám</label>						
+                <input type="text" class="form-control" name="house_number" id="house_number" value="{{houses.house_number}}"></div>
+            <div class="form-group mt-2">
+                <label for="space" class="form-label">Férőhelyek száma</label>
+                <input type="number" class="form-control" name="space" id="space" value="{{ houses.space }}"></div>
+            
+                <div class="form-group mt-2">
+                <label for="sale" class="form-label">Kiadó</label>
+                <input type="checkbox" class="form-check" name="sale" id="sale" {{ houses.sale ? 'checked':'' }}></div>
+            <div class="container">
+                <button type="submit" class="btn btn-info p-2 mt-1" name="update">Módosít</button>
+                <a class="btn btn-warning p-2 mt-1" href="javascript:history.back()">Mégsem</a></div>     
+    </form>
+</div>
+</body>
+</html>
+{% include 'footer.html.twig' %}

@@ -1,0 +1,82 @@
+*{
+    font-family: Arial, Helvetica, sans-serif
+    url(https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200&display=swap);
+    font-size: 16px;
+}
+
+#bszta{
+    background-color: #C9B793;
+  
+}
+
+ul{
+    text-decoration: black;
+} 
+
+#publicfooter{
+    background-color: #545658;
+    height:80px;
+    text-align: center;
+    padding-top: 7px;
+}
+.bi{
+    color: #C9B793;
+    font-size:25px;
+    padding-right: 8px;
+}
+
+h1{
+    color: #2F343A
+}
+
+.btn-group{
+    background-color: #C9B793;
+    width: 200px;
+    height: auto;
+    color:white;
+}
+#bemutatkozas{
+    font-size: 22px;
+    color: #2F343A;
+    margin: 8px 0px 5px 2px;
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+#akcios{
+    text-align: center;
+    background-color:  #C9B793;
+}
+div h1:nth-child(1)
+{
+    padding-top: 30px;
+}
+div a:nth-child(1){
+    background-color: #BA834D;
+    border-style: none;
+
+}
+div a:nth-child(2){
+    background-color: #BA834D;
+    border-style: none;
+}
+.card-text{
+    text-align: left;
+}
+
+div.a{
+    text-align: center;
+}
+
+#szarvas{
+    background-color: #6e5d41;
+}
+div > h1{
+    color: rgba(255, 255, 255, 0.7);
+}
+.lead {
+    color: white;
+}

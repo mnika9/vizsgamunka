@@ -1,0 +1,22 @@
+{% include 'header.html.twig' %}
+{% include 'menu.html.twig' %}
+
+
+<div class="container">
+      <div class="row">
+            <form action="titleAdd" method="post" class="row g-1">
+                <div class="form-group">
+                    <label for="title_name" class="form-label">Megnevezés</label>
+                    <input type="text" class="form-control" name="title_name" id="title_name" required></div>
+                    <div class="form-group">
+                        <label for="status">Státusz</label>
+                        <input type="checkbox" class="form-check" name="status" id="status" checked></div>
+                    <div class="container">
+                    <button type="submit" class="btn btn-primary p-2 m-3 " name="save"><i class="bi bi-save-fill">Új titulus felvitele</button>
+                	</div>
+                     <div class="container"><a class="btn btn-warning p-2 m-3" href="javascript:history.back()"><i class="bi bi-arrow-left-square-fill" style="color: #BA834D"></i>Mégsem</a></div>
+         </form>
+      </div>
+     </div>
+
+{% include 'footer.html.twig' %}

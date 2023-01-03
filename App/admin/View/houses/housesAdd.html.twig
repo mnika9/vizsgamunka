@@ -1,0 +1,53 @@
+{% include 'header.html.twig' %}
+{% include 'menu.html.twig' %}
+
+ {# {{ dump(houses) }} #}
+
+<div class="container mt-5 d-flex justify-content-center">
+	<div class="col-sm-6">
+    <div class="col-md-12 text-center">
+			<h3>Új vendégház felvitele</h3>
+		</div>
+    <form action="housesAdd" method="post" class="row g-2 mt-3">
+        <div class="form-group">
+            <label for="name" class="form-label">Vendégház neve*</label>
+            <input type="text" class="form-control" name="name" id="name" required></div>
+            <div class="form-group mt-2">
+                <label for="postcode" class="form-label">Irányítószám*</label>
+                <input type="number" class="form-control" name="postcode" id="postcode" required></div>
+            <div class="form-group mt-2">
+                <label for="city" class="form-label">Város*</label>
+                <input type="text" class="form-control" name="city" id="city" required></div>
+            <div class="form-group mt-2">
+                <label for="street" class="form-label">Utca neve*</label>
+                <input type="text" class="form-control" name="street" id="street" required></div>
+            <div class="form-group mt-2">
+                <label for="street_type" class="form-label">Közterület jellege</label>
+                <input type="text" class="form-control" name="street_type" id="street_type" required></div>
+            <div class="form-group mt-2">
+		    	<label for="house_number" class="form-label">Házszám</label>						
+                <input type="text" class="form-control" name="house_number" id="house_number"></div>
+            <div class="form-group mt-2">
+                <label for="space" class="form-label">Férőhelyek száma*</label>
+                <input type="number" class="form-control" name="space" id="space" placeholder="Kérlek add meg a férőhelyek számát"  required></div>
+          <!-- <div class="form-group mt-2">
+               <label for="owners" >Tulajdonos email címe</label>
+                <select class="form-select"  name="owners" id="owners" >
+                {% for owner in owners %}
+                        <option value="{{owner.id}}"> {{ owner.email }} </option>
+                    {% endfor %}
+                </select></div> -->
+		    <div class="form-group mt-2">
+                <label for="sale" class="form-label">Kiadó</label>
+                <input type="checkbox" class="form-check" name="sale" id="sale" checked></div>
+            <div class="container">
+                <button type="submit" class="btn btn-info p-2 mt-1" name="save"><i class="bi bi-arrow-up-square-fill p-1"></i>Mentés</button>
+                <a class="btn btn-warning p-2 mt-1" href="javascript:history.back()"><i class="bi bi-arrow-left-square-fill p-1" style="color: #BA834D"></i>Mégsem</a></div>
+               
+    </form>
+</div>
+</div>
+</body>
+</html>
+
+{% include 'footer.html.twig' %}

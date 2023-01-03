@@ -1,0 +1,48 @@
+{% include 'header.html.twig' %}
+{% include 'menu.html.twig' %}
+
+ {# {{ dump(titles) }} #}
+ 
+
+
+<div class="container">
+    <h1 class="text-center mt-3 mb-3">Titulusok kezelése</h1>
+</div>
+
+<div class="container justify-content-center md-6">
+    <div class="container pt-3">
+        <table class="table table-hover table-sm mb-3 ">
+            <thead class="text-center">
+                <tr>
+                    <th class="col-lg-2 ">ID</th>
+                    <th class="col-lg-3 ">Megnevezés</th>
+                    <th class="col-lg-3 ">Státusz</th>
+                    <th class="col-lg-4">Műveletek</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for title in titles %}
+                    <tr class="text-center">
+                        <td>{{ title.id }}</td>
+                        <td>{{ title.title_name }}</td>
+						<td>{{ title.status ? 'Aktív' : 'Inaktív'}}</td>
+                        <td>
+                            <a class="btn btn-warning" href='/titleEdit/{{ title.id }}'>
+                                <i class="bi bi-pencil-square m-1"></i>Módosít</a>
+                            <a class="btn btn-outline-danger" href='titleDelete/{{ title.id }}'>
+                                <i class="bi bi-trash3-fill m-1"></i>Töröl</a>
+                        </td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+		<div class="d-grid gap-2 col-6 mx-auto" >
+		<a class="btn btn-primary mb-3"  style="background-color: #67CGFR" href="title/titleAdd">
+			<i class="fa-solid fa-plus p-1"></i>Új jogosultság felvitele</a>
+	</div>
+   
+</div>
+
+
+{% include 'footer.html.twig' %}

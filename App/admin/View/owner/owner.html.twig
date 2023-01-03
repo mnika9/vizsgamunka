@@ -1,0 +1,54 @@
+{% include 'header.html.twig' %}
+{% include 'menu.html.twig' %}
+
+
+<div class="container">
+	<h1 class="text-center mt-3 mb-3">Tulajdonosok</h1>
+</div>
+
+<div class="container justify-content-center md-6">
+	<div class="container pt-3">
+		<table class="table table-hover p-2 center">
+			<thead>
+				<tr class="text-center">
+					<th class="col">ID</th>
+					<th class="col">Név</th>
+					<th class="col">Email cím</th>
+					<th class="col">Telefonszám</th>
+					<th class="col">Házak</th>
+					<th class="col">Státusz</th>
+					<th class="col">Műveletek</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for owner in owners %}
+					<tr class="text-center">
+						<td>{{ owner.id }}</td>
+						<td>{{ owner.lastname }}
+							{{owner.firstname}}</td>
+						<td>{{ owner.email }}</td>
+						<td>{{ owner.phone_number }}</td>
+						<td>
+							<ul>{{ owner.houses }}</ul>
+						</td>
+						<td>{{owner.status ? 'Aktív' : 'Inaktív' }}</td>
+						<td>
+							<a class="btn btn-warning"  href='ownerEdit/{{ owner.id }}'>
+								<i class="bi bi-pencil-square m-1"></i>
+								Módosít</a>
+							<a class="btn btn-outline-danger" href='ownerDelete/{{ owner.id }}'>
+								<i class="bi bi-trash3-fill m-1"></i>
+								Töröl</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<div class="d-grid gap-2 col-2 mx-auto">
+		<a class="btn btn-info mb-3" href="/ownerAdd">
+			<i class="bi bi-person-plus-fill p-1"></i>Új tulajdonos felvitele</a>
+	</div>
+</div>
+
+{% include 'footer.html.twig' %}

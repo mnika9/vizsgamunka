@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #3B3B3D">
+	<div class="container">
+		<a class="navbar-brand" style="color:white" href="/">Családinyár</a>
+		<div class="collapse navbar-collapse " id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" style="color:#D0DD2B" href="#/houses" role="button" data-bs-toggle="dropdown" >
+						<i class="bi bi-house-gear p-1"></i>Vendégházak kezelése</a>
+					<ul class="dropdown-menu" style="color:white">
+						<li>
+							<a class="dropdown-item" href="/houses">Vendégház lista</a>
+						</li>
+						<li>
+							<a class="dropdown-item" href="/housesAdd">Vendégházak felvitele</a>
+						</li>
+						<li><hr class="dropdown-divider"></li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" style="color:#67CDDC" href="#/manager" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<i class="bi bi-people-fill p-1"></i>
+						Felhasználók kezelése</a>
+					<ul class="dropdown-menu" style="color:white">
+						<li>
+							<a class="dropdown-item" href="/manager">Manager</a>
+						</li>
+						<li><hr class="dropdown-divider"></li>
+						<li>
+							<a class="dropdown-item" href="/owner">Tulajdonos</a>
+						</li>
+						<li><hr class="dropdown-divider"></li>
+						<li>
+							<a class="dropdown-item" href="/title">Jogosultságok kezelése</a>
+						</li>
+					</ul>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle " style="color:#67CDDC" href="#/slider" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<i class="bi bi-image p-1"></i>Sliderek kezelése
+					</a>
+					<ul class="dropdown-menu" style="color:white">
+						<li>
+							<a class="dropdown-item" href="/sliderAdd">Slider hozzáadása</a>
+						</li>
+						<li><hr class="dropdown-divider"></li>
+						<li>
+							<a class="dropdown-item" href="/slider">Slider szerkesztése</a>
+						</li>
+					</ul>
+				</li>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link active" style="color:#D0DD2B" href="/passwords" role="button">
+					<i class="bi bi-spellcheck p-1"></i>
+					Jelszókezelés</a>
+			</li>
+		</ul>
+	</div>
+</div></nav></body></html>{% include 'footer.html.twig' %}

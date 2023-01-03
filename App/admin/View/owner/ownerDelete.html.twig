@@ -1,0 +1,31 @@
+{% include 'header.html.twig' %}
+{% include 'menu.html.twig' %}
+
+<div class="container text-center ">
+	<div class="row">
+		<form action="/ownerDelete" method="post">
+			<input type="hidden" value="{{owners.id}}" name="id">
+			<div class="col-md-12 pt-3">
+				<h4>Tulajdonos neve:</h4>
+				<p>{{owners.lastname}}
+					{{owners.firstname}}</p>
+			</div>
+			<div class="col-md-12">
+				<a href="javascript:history.back()" class="btn btn-warning mt-3">
+					<i class="bi bi-arrow-left-square-fill m-1" style="color: #BA834D"></i>
+					Vissza
+				</a>
+				<button type="submit" class="btn btn-danger text-white mt-3" name="delete" onclick="myFunction()">
+					<i class="bi bi-trash3-fill" style=" color: #C9B793;"></i>
+					Törlés
+				</button>
+			</div>
+		</div>
+	</form>
+</div>
+<script>
+		function myFunction(){
+			alert("A tulajdonos törölve!")
+		}
+	</script>
+{% include 'footer.html.twig' %}

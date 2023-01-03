@@ -1,0 +1,29 @@
+{% include 'header.html.twig' %}
+
+<div class="container text-center mt-5 d-flex justify-content-center" >
+  <div class="row">
+  <div class="p-2"><h2>Üdvözöllek az admin felületen!</h2></div>
+    <div class="col-5 ">
+      <div class="card text-bg-primary" style="max-width: 40rem;">
+              <div class="card-header">Manager vagyok</div>
+              <div class="card-body">
+              <div class=""><i class="bi bi-person" style="font-size: 2rem; color: white;" ></i></div>
+                <a class="btn btn-light" href="/login">Belépés</a>
+              </div>
+            </div>
+    </div>
+    <div class="container col-2"> </div>
+      <div class="col-5 ">
+       <div class="card text-bg-info" style="max-width: 40rem">
+                <div class="card-header">Tulajdonos vagyok</div>
+                <div class="card-body">
+                <div class=""><i class="bi bi-person" style="font-size: 2rem; color: white;" ></i></div>
+                  <a class="btn btn-light" href="/login">Belépés</a>
+                </div>
+              </div>
+      </div>
+    
+  </div>
+</div>
+
+{% include 'footer.html.twig' %}

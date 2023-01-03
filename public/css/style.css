@@ -1,0 +1,26 @@
+*{
+    font-family: Arial, Helvetica, sans-serif
+    url(https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200&display=swap);
+    font-size: 14px;
+}
+
+h1 {
+    color:#545658;
+    font-weight: 100;
+}
+
+body{
+    background-color: #C9B793;
+}  
+
+p{
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+

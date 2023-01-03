@@ -1,0 +1,54 @@
+{% include 'header.html.twig' %}
+{% include 'menu.html.twig' %}
+
+{# {{ dump(managers) }} #}
+
+<div class="container d-grid gap-2 col-2 mx-auto">
+	<h1 class="pt-3">Felhasználók</h1>
+</div>
+<div class="container justify-content-center md-6">
+<table class="table table-hover p-2 center">
+	<thead>
+		<tr class="text-center">
+			<th scope="col">ID</th>
+			<th scope="col">Név</th>
+			<th scope="col">Titulus</th>
+			<th scope="col">Felhasználónév</th>
+			<th scope="col">Email</th>
+			<th scope="col">Telefonszám</th>
+			<th scope="col">Státusz</th>
+			<th scope="col">Műveletek</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for manager in managers %}
+			<tr class="text-center">
+				<td>{{manager.id}}</td>
+				<td>{{manager.lastname}}
+					{{manager.firstname}}</td>
+				<td>{{manager.title_name}}</td>
+				<td>{{manager.username}}</td>
+				<td>{{manager.email}}</td>
+				<td>{{manager.phone_number}}</td>
+				<td>{{manager.status ? 'Aktív' : 'Inaktív'}}</td>
+				<td>
+					<a class="btn btn-warning" href='/managerEdit/{{manager.id}}'>
+						<i class="bi bi-pencil-square m-1"></i>
+						Módosít</a>
+					<a class="btn btn-outline-danger" href='/managerDelete/{{manager.id}}'>
+						<i class="bi bi-trash3-fill m-1"></i>
+						Töröl</a>
+				</td>
+			{% endfor %}
+		</tr>
+	</tbody>
+</table>
+</div>
+	<div class="container">
+		<div class="d-grid gap-2 col-2 mx-auto">
+			<a class="btn btn-info mb-3" href="managerAdd">
+				<i class="bi bi-person-plus-fill p-1"></i>Új manager felvitele</a>
+		</div>
+	</div>
+
+{% include 'footer.html.twig' %}

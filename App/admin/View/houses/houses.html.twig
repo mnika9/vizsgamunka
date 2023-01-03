@@ -1,0 +1,52 @@
+{% include 'header.html.twig' %}
+{% include 'menu.html.twig' %}
+ 
+ {# {{ dump(houses) }} #}
+
+<div class="container">
+    <h1 class="text-center mt-3">Vendégházak</div>
+<div class="container">
+    
+    <table class="table table-hover p-2 center ">
+        <thead>
+            <tr class="text-center">
+                <th>ID</th>
+                <th>Vendégház neve</th>
+                <th>Címe</th>
+                <th>Férőhelyek száma</th>
+                <th>Tulajdonos</th>
+                <th>Kiadó</th>
+                <th>Műveletek</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for house in houses %}
+                <tr class="text-center">
+                    <td>{{ house.id }}</td>
+                    <td>{{ house.name }}</td>
+                    <td>{{ house.postcode }}
+                        {{ house.city }}
+                        {{ house.street }}
+                        {{ house.street_type }}
+                        {{ house.house_number }}</td>
+                    <td>{{ house.space }}</td>
+                    <td>{{ house.lastname}} {{house.firstname}}</td>
+                    <td>{{ house.sale ? 'Igen' : 'Nem' }}</td>
+                    <td>
+                        <a class="btn btn-warning p-1" href='/housesEdit/{{ house.id }}'>
+                            <i class="bi bi-pencil-square m-1"></i>Módosít</a>
+                        <a class="btn btn-outline-danger p-1" href='/housesDelete/{{ house.id }}'>
+                          <i class="bi bi-trash3-fill m-1"></i>Töröl</a>
+                    </td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    <div class="container">
+        <div class="d-grid gap-2 col-2 mx-auto">
+            <a class="btn btn-info mb-3 pr-1" href="housesAdd">
+                <i class="bi bi-house-add-fill p-1"></i>Új vendégház felvitele</a>
+        </div>
+    </div>
+</div>
+{% include 'footer.html.twig' %}

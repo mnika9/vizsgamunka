@@ -1,0 +1,15 @@
+{% include 'header.html.twig' %}
+{% include 'publicmenu.html.twig' %}
+
+
+<div class="container text-center p-2">
+        <div class="contacts"><h4 class="justity-content-center">Elérhetőségeink:</h4></div>
+      <div class="container text-center"> {% for contact in contacts %}</div>
+         <div class="contacts"><i class="bi bi-envelope-at-fill " style="color: #3B3B3D";></i> {{ contact.email }}</div>
+            <div class="contacts"><i class="bi bi-telephone-fill " style="color: #3B3B3D"></i>+ 36 {{ contact.phone_number}}</div>
+            <div class="contacts"><i class="bi bi-globe " style="color: #3B3B3D"></i> {{contact.weblink}}</div>
+        {% endfor %}
+
+</div>
+
+{% include 'publicfooter.html.twig' %}

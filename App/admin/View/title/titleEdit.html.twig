@@ -1,0 +1,25 @@
+{% include 'header.html.twig' %};
+
+{# {{ dump(titles) }} #}
+
+<div class="container">
+    <div class="justify-content-center mt-2">
+        <h1>titulus módosítás</h1>
+    </div>
+    <form action="/titleEdit" method="post" class="row g-2">
+        <input type="hidden" value="{{ titles.id }}" name="id">
+            <div class="form-group">
+                <label for="title_name" class="form-label">Megnevezés</label>
+                <input type="text" class="form-control" name="title_name" id="title_name" value="{{ titles.title_name }}"></div>
+                <div class="form-group">
+                    <label for="status">Státusz</label>
+                    <input type="checkbox" class="form-check" name="status" id="status" {{ titles.status ? 'checked':'' }}></div>
+                    <div class="container-fluid">
+                        <button type="submit" class="btn btn-info p-2 mt-1" name="update"><i class="bi bi-pencil-square m-1"></i>Módosítás</button>
+                        <a class="btn btn-warning p-2 mt-1" href="javascript:history.back()"><i class="bi bi-arrow-left-square-fill" style="color: #BA834D"></i>Mégsem</a>
+                    </div>
+                </form>
+            </div>
+        </body>
+    </html>
+    {% include 'footer.html.twig' %}

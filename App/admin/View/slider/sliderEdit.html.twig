@@ -1,0 +1,43 @@
+{% include 'header.html.twig' %}
+{% include 'menu.html.twig' %}
+
+<div class="container mt-5 d-flex justify-content-center">
+	<div class="col-sm-6">
+		<h1 class="display-5 text-center mb-2">
+			Képváltó szerkesztés</h1>
+		<form action="/sliderEdit" method="POST">
+			<input type="hidden" value="{{ slider.id }}" name="id">
+            <div class="form-group">
+				<label for="name">Név*</label>
+				<input type="text" class="form-control" name="name" id="name" value="{{ slider.name }}" required>
+			</div>
+		<div class="form-group">
+				<label for="pictureLink">Kép</label>
+				<input class="form-control" type="file" id="pictureLink" name="pictureLink" value="{{ slider.picture_link }}">
+			</div>
+			<div class="form-group">
+				<label for="code">Kód*</label>
+				<input type="text" class="form-control" name="code" id="code" value="{{ slider.code }}" required>
+			</div>
+			<div class="form-group">
+				<label for="description">Leírás</label>
+				<input type="text" class="form-control" name="description" id="description" value="{{ slider.description }}">
+			</div>
+			<div class="form-group">
+				<label for="title">Cím*</label>
+				<input type="text" class="form-control" name="title" id="title" value="{{ slider.title }}" required>
+			</div>
+            <div class="form-check mt-3">
+                <input type="checkbox" name="status" id="status" {{ slider.status ? 'checked':''}}>
+                <label for="status">Aktív</label>
+            </div>
+            <div class="form-group mt-3 justify-content-between d-flex">
+				<button type="submit" class="btn btn-success text-white" name="update"><i class="bi bi-pencil-square m-1"></i> Módosítás </button>
+                <a href="javascript:history.back()" class="btn btn-warning"> <i class="bi bi-arrow-left-square-fill m-1"></i> Vissza </a>
+                
+            </div>
+		</form>
+	</div>
+</div>
+
+{% include 'footer.html.twig' %}

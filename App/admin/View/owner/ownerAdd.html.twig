@@ -1,0 +1,36 @@
+
+{% include 'header.html.twig' %}
+{% include 'menu.html.twig' %}
+
+ {# {{ dump(ownerHouses)}} #}
+
+<div class="container mt-5 d-flex justify-content-center">
+<div class="col-sm-6">
+<div class="col-md-12 text-center">
+			<h3>Új tulajdonos felvitele</h3>
+		</div>
+	<form action="ownerAdd" method="post" class="row g-2">
+		<div class="form-group">
+			<label for="lastname" class="form-label">Vezetéknév*</label>
+			<input type="text" class="form-control" name="lastname" id="lastname" required></div>
+		<div class="form-group">
+			<label for="firstname" class="form-label">Keresztnév*</label>
+			<input type="text" class="form-control" name="firstname" id="firstname" required></div>
+		<div class="form-group">
+			<label for="email" class="form-label">Email cím*</label>
+			<input type="email" class="form-control" name="email" id="email" placeholder="Kérlek add meg az email címed" required></div>
+		<div class="form-group">
+			<label for="phone_number" class="form-label">Telefonszám*</label>
+			<input type="tel" class="form-control" name="phone_number" id="phone_number" pattern="[0-9]{9}" required><small> Formátum: 123456789</small></div>
+		<div class="form-group">
+			<label for="status">Státusz</label>
+			<input type="checkbox" class="form-check" name="status" id="status" checked></div>
+		<div class="container">
+			<button type="submit" class="btn btn-info p-2 mt-1" name="save"><i class="bi bi-arrow-up-square-fill p-1"></i>Mentés</button>
+			<a class="btn btn-warning p-2 mt-1" href="javascript:history.back()"><i class="bi bi-arrow-left-square-fill p-1" style="color: #BA834D"></i>Mégsem</a></div>
+		</form>
+		</div>
+	</div>
+		</body>
+	</html>
+	{% include 'footer.html.twig' %}
